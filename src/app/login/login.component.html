@@ -1,0 +1,16 @@
+<html>
+    <body>
+        <h1> Welcome to the CRUD APP.</h1>
+        <h2>Please Login</h2>
+        <form [formGroup]="loginForm">
+          <label >Email</label>
+          <input type="email" formControlName="emailId">
+          <label >Password</label>
+          <input type="password" formControlName="password">
+          <button type="submit" (click)="submit()">Submit</button>
+          <br>
+          <a href="#" routerLink="/sign-up">SignUp</a>
+        </form>
+
+    </body>
+</html>

@@ -1,0 +1,17 @@
+<html>
+    <body>
+        <h1> Welcome to the CRUD APP.</h1>
+        <h2>Please Enter the Details</h2>
+
+        <form [formGroup]="editForm">
+          <label >Email*</label>
+          <input type="email" formControlName="emailId">
+          <label >Name*</label>
+          <input type="text" formControlName="name">
+          <button type="submit" (click)="submit()">Submit</button>
+          <br>
+          <a href="#" routerLink="/home">Home</a>
+        </form>
+
+    </body>
+</html>

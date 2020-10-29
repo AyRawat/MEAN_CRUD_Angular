@@ -1,0 +1,42 @@
+<html>
+    <body>
+        <h1> Welcome {{loggedInUserName}} .</h1>
+        <hr>
+        <button (click)="onLogout()">
+            LogOut
+        </button>
+        <br>
+        <h2>Please Enter the Name of the User to Search</h2>
+        <form [formGroup]="searchForm">
+          <label >Name</label>
+          <input type="text" formControlName="name">
+          <button type="submit" (click)="search()">Search</button>
+        </form>
+<br>
+<a href="#" routerLink="/add">Add User</a>
+
+<br>
+<h5>List of all the Users Available</h5>
+<table>
+    <thead>
+<tr>
+    <th>Name</th>
+    <th>EmailId</th>
+    <th>Options</th>
+</tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let result of userResults">
+            <td>{{result?.name}}</td>
+            <td>{{result?.emailId}}</td>
+            <td><button id="{{result._id}}" (click)="onDelete($event)">Delete</button>-<button id="{{result._id}}" (click)="onEdit($event)">Edit</button></td>
+      </tr>
+    </tbody>
+ 
+    
+</table>
+
+<br>
+
+    </body>
+</html>
